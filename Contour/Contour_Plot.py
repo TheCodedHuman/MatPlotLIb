@@ -109,8 +109,8 @@ def contour_plot_6():
     plt.tight_layout()
     
 
-    plt.savefig(r'D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Contour\Single_Contour_Plot.png', dpi=300)            # This was just the file location on my pc, you can tweak as per your's
-    plt.show()
+    plt.savefig(r'D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Contour\Single_Contour_Plot.png', dpi=100)            # This was just the file location on my pc, you can tweak as per your's
+    plt.show()                                                                                                          # dpi = 100 is default in savefig()
 
 
 def contour_plot_7():
@@ -140,7 +140,7 @@ def contour_plot_7():
     plt.grid(True, linestyle='--', linewidth=0.5, alpha=0.7)
     plt.tight_layout()
 
-    plt.savefig(r'D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Contour\Multi_Contour_Plot.png', dpi=300)            # This was just the file location on my pc, you can tweak as per your's
+    plt.savefig(r'D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Contour\Multi_Contour_Plot.png')            # This was just the file location on my pc, you can tweak as per your's
     plt.show()
 
 
