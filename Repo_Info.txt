@@ -1,6 +1,7 @@
 Hello Coder !!!
 
 I am adding this repository as public today on 07-12-2024
+I know you doing great in life
 
 This repository contains example usage of SOME basic attributes of matplotlib library
 this may help you in understanding the use cases of matplotlib

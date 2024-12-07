@@ -8,15 +8,17 @@ import numpy as np
 x = np.linspace(-10, 3, 100)
 y = np.linspace(-7, 5, 100)
 X, Y = np.meshgrid(x, y)
-Z = np.sin(np.sqrt(x**2 + Y**2))
-plt.rcParams['figure.figsize'] = (12, 8)
+Z = np.sin(np.sqrt(x**2 + Y**2))                        # Notice the + sign in between
+plt.rcParams['figure.figsize'] = (10, 6)
 
 # defined
 def contour_info():
+    sp = '~'*100
     print(f"The value for x is -> {x}\n\n\t\tand\n\nThe value for y is -> {y}\n\n")
-    print(f"The value for X is -> {X}\n\n\t\tand\n\nThe value for Y is -> {Y}\n\n\t\tand\n\nThe value for Z is -> {Z}\n\n")
+    print(f"{sp}\n\nThe value for X is -> {X}\n\n\n\nThe value for Y is -> {Y}\n\n\t\tand\n\nThe value for Z is -> {Z}\n\n")
     
 def runtheplot(title):
+    '''This function helps in reducing redundancy of xlabel, ylabel, title'''
     plt.xlabel('X-Axis')    
     plt.ylabel('Y-Axis')
     plt.title(title)
@@ -24,8 +26,9 @@ def runtheplot(title):
 
 
 def contour_plot_1():
-    # plt.contour(X, Y, Z, level=20)
-    plt.contour(X, Y, Z, level=100, cmap='autumn')                               # This creates a filled contour plot
+    '''This creates a basic contour plot'''
+    plt.contour(X, Y, Z)                                # unfilled contour plot - contour()
+    plt.contourf(X, Y, Z)                               # filled contour plot - contourf()
     plt.colorbar()
     runtheplot('Basic Contour Plot')
 
@@ -35,7 +38,7 @@ def contour_plot_2():
 
 # Main
 contour_info()
-contour_plot_1()
+# contour_plot_1()
 # contour_plot_2()
 
 
