@@ -148,7 +148,7 @@ def pie_plot_9(filename='Saving_Da_Pie.png'):
 # pie_plot_5()
 # pie_plot_6()
 # pie_plot_7()
-pie_plot_8()
+# pie_plot_8()
 # pie_plot_9()
 
 

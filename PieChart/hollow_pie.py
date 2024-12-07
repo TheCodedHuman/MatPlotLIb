@@ -1,4 +1,5 @@
 # Here we are fabricating the circular pie chart considering usage
+# this program was just created for usage of hollow pie chart
 
 import matplotlib.pyplot as plt
 

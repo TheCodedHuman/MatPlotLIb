@@ -18,11 +18,11 @@ def histo_info(): print(f"\nThe data we used here by x was:\t--->\t {x} \n\n")
 # defined
 def histo_plot_1():
 
-    # phigure()                           # Just using function again and again rather than figure(figsize=(m, n))
+    phigure()                           # Just using function again and again rather than figure(figsize=(m, n))
     plt.hist(x)                         # only x is requried (name can be different)
-    # plt.title('Basic Histogram Plot')
-    # plt.xlabel('X-Axis')
-    # plt.ylabel('Y-Axis')
+    plt.title('Basic Histogram Plot')
+    plt.xlabel('X-Axis')
+    plt.ylabel('Y-Axis')
     plt.show()
 
 

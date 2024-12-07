@@ -6,18 +6,18 @@ import numpy as np
 # from matplotlib.colors import Normalize
 
 
-# information
-x = [7, 4, 2, 4, 6, 6]
-y = [7, 2, 5, 7, 2, 1]
-size = 1000
+# literals
 
 
-# program
-plt.scatter(x, y, s=size, c= ['k', 'gold', 'blue', 'm', 'green', 'yellow'], marker='^', zorder= 3, alpha=0.5)
-plt.legend()
-plt.grid(True, zorder = 1)
-plt.show()
+# defined
+def scato_info():
+    pass
 
+
+
+# Main
+
+# this program isn't complete as its scatter main file was demonstrated in Scatter.py
 
 
 
@@ -44,4 +44,3 @@ color: An array specifying the color of each point.
 data: Optional parameter to pass other data.
 ****kwargs**: Any additional keyword arguments for the marker style (e.g., 'linestyle', 'alpha').
 '''
-float = 
