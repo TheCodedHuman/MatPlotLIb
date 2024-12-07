@@ -1,8 +1,11 @@
 # Here we are fabricating functions for contour plot
 
+
 # imports
+import os
 import matplotlib.pyplot as plt
 import numpy as np
+
 
 # literals
 x = np.linspace(-10, 3, 100)
@@ -11,7 +14,10 @@ X, Y = np.meshgrid(x, y)
 Z = np.sin(np.sqrt(x**2 + Y**2))                        # Notice the + sign in between
 plt.rcParams['figure.figsize'] = (10, 6)
 
+
 # defined
+def klear(): os.system('cls' if os.name=='nt' else 'clear')
+
 def contour_info():
     sp = '~'*100
     print(f"The value for x is -> {x}\n\n\t\tand\n\nThe value for y is -> {y}\n\n")
@@ -27,18 +33,20 @@ def runtheplot(title):
 
 def contour_plot_1():
     '''This creates a basic contour plot'''
-    plt.contour(X, Y, Z)                                # unfilled contour plot - contour()
+    # plt.contour(X, Y, Z)                                # unfilled contour plot - contour()
     plt.contourf(X, Y, Z)                               # filled contour plot - contourf()
     plt.colorbar()
     runtheplot('Basic Contour Plot')
 
 
 def contour_plot_2():
+    '''This function uses levels, colors, zorder, grid'''
     pass
 
 # Main
+klear()
 contour_info()
-# contour_plot_1()
+contour_plot_1()
 # contour_plot_2()
 
 
