@@ -79,7 +79,7 @@ plt.tight_layout()
 
 # Save the figure with various attributes
 plt.savefig(
-    r'D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Sub_Plot\Sub_Plotter.png',       # Filename
+    r'D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Sub_Plot\Sub_Plotter.png',       # Filename            # This was just the file location on my pc, you can tweak as per your's
     dpi=300,                                                                                        # Resolution
     facecolor='white',                                                                              # Background color
     edgecolor='black',                                                                              # Edge color

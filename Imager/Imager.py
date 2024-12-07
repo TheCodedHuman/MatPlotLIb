@@ -7,7 +7,7 @@ import numpy as np
 
 # literals
 # plt.rcParams['figure.figsize'] = (12, 8)
-pth = r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Imager\Example_Image_for_ImShow.jpg"
+pth = r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Imager\Example_Image_for_ImShow.jpg"            # This was just the file location on my pc, you can tweak as per your's
 x = plt.imread(pth)
 
 # Defined

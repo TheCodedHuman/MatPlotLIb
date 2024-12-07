@@ -134,7 +134,7 @@ def pie_plot_9(filename='Saving_Da_Pie.png'):
     plt.title('Distribution of Students by Favorite Subject', fontsize=18)              # If we use title_show() here the title may not be used correctly 
 
     # Saving the figure
-    plt.savefig(f'D:\\Bhaiyu Ki Files Aur Samaan\\NewEraOfPython\\MatPlotLIb\\Graph_Images\Pie\\{filename}')
+    plt.savefig(f'D:\\Bhaiyu Ki Files Aur Samaan\\NewEraOfPython\\MatPlotLIb\\Graph_Images\Pie\\{filename}')            # This was just the file location on my pc, you can tweak as per your's
     print(f"Figure saved as {filename}")
     plt.show()
 

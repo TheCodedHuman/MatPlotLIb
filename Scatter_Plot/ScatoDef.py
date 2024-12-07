@@ -17,7 +17,9 @@ def scato_info():
 
 # Main
 
-# this program isn't complete as its scatter main file was demonstrated in Scatter.py
+# this program isn't complete as its scatter main file was demonstrated in Scatter.py that helped me in understanding usage of classes in python
+# eventho, the usage of scatter plot doesn't requred usage of classes, 
+# that's why this program was being created , similarly as done for other graph codes
 
 
 

@@ -125,7 +125,7 @@ def histo_plot_8():         #savefig()
     plt.title('Usage Of Attributes -> linewidth; saving the graph in this function too')
     plt.legend()
     plt.grid(True, zorder=1)
-    plt.savefig(r'D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Histo_Gram\Histo_Plot_Graph.png')
+    plt.savefig(r'D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Histo_Gram\Histo_Plot_Graph.png')            # This was just the file location on my pc, you can tweak as per your's
     plt.show()
 
 # Main

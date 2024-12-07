@@ -99,7 +99,7 @@ def plot_7():
     
     # Save the plot as a PNG file before showing it
     # plt.savefig(r'D:/Bhaiyu Ki Files Aur Samaan/NewEraOfPython/MatPlotLIb/Graph_Images/line_plot00.png')
-    plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Complete_Line_Plot77.png")
+    plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Complete_Line_Plot77.png")            # This was just the file location on my pc, you can tweak as per your's
 
     # Display the plot
     plt.show()
@@ -122,7 +122,7 @@ def plot_8():
 
     plt.legend()
     plt.grid(True)
-    plt.savefig("D:\\Bhaiyu Ki Files Aur Samaan\\NewEraOfPython\\MatPlotLIb\\Graph_Images\\Complete_Line_Plot88.png")
+    plt.savefig("D:\\Bhaiyu Ki Files Aur Samaan\\NewEraOfPython\\MatPlotLIb\\Graph_Images\\Complete_Line_Plot88.png")            # This was just the file location on my pc, you can tweak as per your's
     plt.show()
 
 
