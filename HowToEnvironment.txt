@@ -1,0 +1,13 @@
+for cmd usage
+
+cd /d "<folder location>"
+python -m venv <environt_file_name>
+.\<same_environment_file_name>\Scripts\activate
+echo. > practice.py
+pip install requests
+
+---> open practice.py file, code something, save, close
+
+python practice.py
+deactivate
+del practice.py
