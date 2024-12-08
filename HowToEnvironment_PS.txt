@@ -1,0 +1,42 @@
+
+
+# Navigate to folder location
+cd "<folder location>"
+
+# Create a virtual environment
+python -m venv <environment_file_name>
+
+# Activate the virtual environment
+.\<environment_file_name>\Scripts\Activate.ps1
+
+# Create a new Python file (PowerShell syntax for creating an empty file)
+New-Item -ItemType File -Name "practice.py"
+
+# Install the requests package
+pip install requests
+
+# Open, code, save, and close practice.py file
+# (Manual step - use your favorite code editor)
+
+# Run the Python script
+python practice.py
+
+# Deactivate the virtual environment
+deactivate
+
+# Delete the practice.py file
+Remove-Item practice.py
+
+
+### Explanation:
+1. **cd**: Navigates to the specified directory.
+2. **python -m venv**: Creates a virtual environment in the specified folder.
+3. **Activate.ps1**: Activates the virtual environment in PowerShell.
+4. **New-Item**: Creates a new file named `practice.py`.
+5. **pip install requests**: Installs the `requests` package in the virtual environment.
+6. **Manual Step**: Open, code, save, and close `practice.py` using your preferred code editor.
+7. **python practice.py**: Runs the Python script.
+8. **deactivate**: Deactivates the virtual environment.
+9. **Remove-Item**: Deletes the `practice.py` file.
+
+
