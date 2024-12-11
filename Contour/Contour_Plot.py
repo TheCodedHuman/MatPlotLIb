@@ -1,5 +1,5 @@
 # Here we are fabricating functions for contour plot
-
+# helps us to see how value of Z changes as a function of two inputs X and Y, such that Z = f(X, Y) -> Z equals to result of a process/equation that takes inputs X and Y
 
 # imports
 from os import system, name
@@ -153,8 +153,8 @@ def contour_plot_7():
 # contour_plot_3()
 # contour_plot_4()
 # contour_plot_5()
-contour_plot_6()
-contour_plot_7()
+# contour_plot_6()
+# contour_plot_7()
 
 
 
