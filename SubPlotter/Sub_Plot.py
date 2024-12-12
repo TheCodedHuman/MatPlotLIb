@@ -44,7 +44,7 @@ def line():
     #     axs[1, 0].plot(subject_data['Student ID'], subject_data['Score'], marker='o', label=subject, zorder = 2)
     
 
-    # simple but uses groupby
+    # same and simple to above but uses groupby
     grouped = df.groupby('Subject')                 # Group the dataframe by 'Subject'
     for name, group in grouped:                     # Plot each group
         axs[1, 0].plot(group['Student ID'], group['Score'], marker='o', label=name, zorder = 2)
@@ -62,6 +62,14 @@ def plotto():
     gender_count = df['Gender'].value_counts()              # Value counts is a function of pandas library
     axs[1, 1].pie(gender_count, labels = gender_count.index, autopct = '%1.1f%%', colors = ['blue', 'pink'])
     axs[1, 1].set_title('Pie Chart: Distribution by Gender')
+
+
+
+
+
+
+
+
 
 
 # Main

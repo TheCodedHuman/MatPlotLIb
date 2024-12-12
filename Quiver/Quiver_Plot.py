@@ -14,8 +14,8 @@ X, Y = np.meshgrid(x, y)
 U = -Y                                                                      # Define initial vector directions
 V = X
 
-U += 0.2 * np.random.randn(*X.shape)                                        # We can add some noise to make it more realistic
-V += 0.2 * np.random.randn(*X.shape)
+# U += 0.2 * np.random.randn(*X.shape)                                        # We can add some noise to make it more realistic
+# V += 0.2 * np.random.randn(*X.shape)
 
 
 # defined
@@ -38,11 +38,12 @@ def quiver_plot_1():
     runtheplot('Basic Quiver Plot')
     
 def quiver_plot_2():
-    global U,V                                                                  # just for demonstration of global keyword
+    global U,V                                                                  # just for demonstration of global keyword - if the global ones are commented
     U += 0.2 * np.random.randn(*X.shape)                                        # We can add some noise to make it more realistic
     V += 0.2 * np.random.randn(*X.shape)
     plt.quiver(X, Y, U, V)
     runtheplot('Quiver Plot With U,V Variation')
+
 
 def quiver_plot_3():
     '''This function uses Scale, Scale_Units, Angles, c and Cmap'''
@@ -50,6 +51,7 @@ def quiver_plot_3():
     plt.quiver(X, Y, U, V, magnitude, scale= 40, scale_units= 'xy', angles= 'xy', cmap= 'jet')
     plt.colorbar(label= 'Magnitude')
     runtheplot('Usage of Scale, Scale_Units, Angles, c and Cmap')
+
 
 def quiver_plot_4():
     '''This function uses alpha, width, headwidth, headlength, headaxislength'''
@@ -59,44 +61,61 @@ def quiver_plot_4():
 def quiver_plot_5():
     '''This function uses pivot, units'''
     magnitude= np.sqrt(U**2 + V**2)
-    plt.quiver(X, Y, U, V, magnitude, pivot= 'middle', units= 'xy', color= 'r', angles= 'xy', width= 0.025)
+    plt.quiver(X, Y, U, V, magnitude, pivot= 'middle', units= 'xy', angles= 'xy', width= 0.025)
     runtheplot('Usage of pivot, units, color, angles, width')
 
 
 def quiver_plot_6():
     '''This function saves the quiver plot              ...yeah that's what it do :)
-    This function is a quiver plot of Earth's wind rotation'''
+    This function is a quiver plot that uses basic attributes of quiver_plot and saves the plot'''
     
-    # Generate a grid of points
-    x = np.linspace(-10, 10, 100)
-    y = np.linspace(-10, 10, 100)
-    X, Y = np.meshgrid(x, y)
-
-    # Define the vector field (Coriolis effect)
-    U = -Y / np.sqrt(X**2 + Y**2)  # Simplified vector field
-    V = X / np.sqrt(X**2 + Y**2)
-
-    # Avoid division by zero
-    U[np.isinf(U)] = 0
-    V[np.isinf(V)] = 0
-    U[np.isnan(U)] = 0
-    V[np.isnan(V)] = 0
+    global U,V                                                                  # just for demonstration of global keyword - if the global ones are commented
+    U += 0.2 * np.random.randn(*X.shape)                                        # We can add some noise to make it more realistic
+    V += 0.2 * np.random.randn(*X.shape)
 
     # Calculate the magnitude for coloring
     magnitude = np.sqrt(U**2 + V**2)
 
     # Create the quiver plot with specified attributes
-    plt.figure(figsize=(10, 10))
-    plt.quiver(X, Y, U, V, magnitude, scale=50, scale_units='xy', angles='xy', cmap='viridis', alpha=0.8, headwidth=4, headlength=6, headaxislength=5, pivot='middle')
+    # plt.figure(figsize=(10, 10))                                              # not necessary if we've already manipulated default figure size
+    plt.quiver(X, Y, U, V, magnitude, scale=50, scale_units='xy', angles='xy', cmap='plasma', alpha=0.8, headwidth=4, headlength=6, headaxislength=5, pivot='middle')
     plt.colorbar(label='Magnitude')
     plt.xlabel('Longitude')
     plt.ylabel('Latitude')
-    plt.title('Quiver Plot of Earth\'s Wind Rotation (Coriolis Effect)')
-    
-    # Save the plot to a file; we can't do it if we use runtheplot() as show() terminates the figure after showing
-    plt.savefig('earth_wind_rotation_quiver_plot.png')                          
+    plt.title('Wind Patterns Around a Low-Pressure System')
+
+    # Save the plot to a file
+    plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Quiver\Single_Quiver_Plot.png")         # we can give dpi = 100; 100 is default, 150-200 is optimal; even 30akes 0 tbit time to load online, 600 qill cook :p
     plt.show()
 
+
+def quiver_plot_7():
+    '''This function shows graph having two Quiver Plots'''
+
+    # Define two different vector fields
+    U1, V1 = -Y, X  # First vector field
+    U2, V2 = Y, -X  # Second vector field (opposite direction)
+
+    # Add some noise to make it more realistic
+    U1 += 0.2 * np.random.randn(*X.shape)
+    V1 += 0.2 * np.random.randn(*X.shape)
+    U2 += 0.2 * np.random.randn(*X.shape)
+    V2 += 0.2 * np.random.randn(*X.shape)
+
+    # First quiver plot
+    any_variable = plt.quiver(X, Y, U1, V1, color='blue', alpha=0.6, headwidth=4, headlength=6, headaxislength=5, pivot='middle', label='Field 1')
+
+    # Second quiver plot
+    plt.quiver(X, Y, U2, V2, color='red', alpha=0.6, headwidth=4, headlength=6, headaxislength=5, pivot='middle', label='Field 2')
+
+    plt.xlabel('X-axis')
+    plt.ylabel('Y-axis')
+    plt.title('Overlay of Two Quiver Plots')
+    plt.legend()
+    # plt.colorbar()                                                                                                            # not necessary as static colors were already given to fields, also, there isn't any fuzzy(ranging/unclear/mixed) color variation 
+
+    plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Quiver\Multi_Quiver_Plot.png")         # we can give dpi = 100; 100 is default, 150-200 is optimal; even 30akes 0 tbit time to load online, 600 qill cook :p
+    plt.show()
 
 
 # Main
@@ -106,8 +125,10 @@ def quiver_plot_6():
 # quiver_plot_3()
 # quiver_plot_4()
 # quiver_plot_5()
-quiver_plot_6()
+# quiver_plot_6()
+# quiver_plot_7()
 
+# print(quiver_plot_6.__doc__)                        # For demonstration / explaination of docstrings in python
 
 '''
 
