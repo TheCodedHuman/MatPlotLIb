@@ -6,18 +6,15 @@ import numpy as np
 
 
 # literals
-x = np.linspace(-2, 2, 20)
-y = np.linspace(-2, 2, 20)
-
-# Create a meshgrid
+plt.rcParams['figure.figsize'] = (13, 9)
+x = np.linspace(-5, 5, 20)
+y = np.linspace(-5, 5, 20)                                                  # Generates a grid of points
 X, Y = np.meshgrid(x, y)
 
-# Vector components with more variation
-U = -Y
+U = -Y                                                                      # Vector field components with more variation
 V = X
 
-# Create the quiver plot
-plt.quiver(X, Y, U, V)
+
 
 # defined
 def runtheplot(title):
@@ -34,7 +31,21 @@ def quiver_info():
     print(f"{sp}\n\nThe value for U[-Y] is -> {U}\n\n\n\nThe value for V[X] is -> {V}\n\n")
     
 
+def quiver_plot_1():
+    plt.quiver(X, Y, U, V)
+    runtheplot('Basic Quiver Plot')
+    
+def quiver_plot_2():
+    global U,V
+    U += 0.2 * np.random.randn(*X.shape)                                        # We can add some noise to make it more realistic
+    V += 0.2 * np.random.randn(*X.shape)
+    plt.quiver(X, Y, U, V)
+    runtheplot('Quiver Plot With U,V Variation')
+
+
 
 
 # Main
-quiver_info()
+# quiver_info()
+quiver_plot_1()
+quiver_plot_2()
