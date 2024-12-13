@@ -54,7 +54,7 @@ def box_plot_multiple():
     # Adjust layout and show plot
     plt.tight_layout()
     runtheplot('Multiple Box Plots in a Single Figure')
-    plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Box\Multiple_Box_Plots.png")
+    # plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Box\Multiple_Box_Plots.png")
     plt.show()
 
 # Call the function to create the plot
