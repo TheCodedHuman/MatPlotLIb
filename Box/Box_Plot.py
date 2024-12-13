@@ -95,7 +95,7 @@ def box_plot_5():
     plt.xticks([1, 2, 3], ['Group 1', 'Group 2', 'Group 3'])
 
     # Show plot
-    plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Box\Single_Box_Plot.png")         # we can give dpi = 100; 100 is default, 150-200 is optimal; even 30akes 0 tbit time to load online, 600 qill cook :p
+    # plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Box\Single_Box_Plot.png")         # we can give dpi = 100; 100 is default, 150-200 is optimal; even 30akes 0 tbit time to load online, 600 qill cook :p
     plt.show()
 
 
@@ -152,7 +152,7 @@ def box_plot_6():
         # Adjust layout and show plot
         plt.tight_layout()
         runtheplot('Multiple Box Plots by Subplots')
-        plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Box\Multiple_Box_Plots.png")
+        # plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Box\Multiple_Box_Plots.png")
 
     # Call the function to create the plot
     box_plot_multiple()

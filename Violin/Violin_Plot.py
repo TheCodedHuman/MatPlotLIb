@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+
 # literals
 plt.rcParams['figure.figsize'] = (10, 6)
 np.random.seed(108)
@@ -15,8 +16,9 @@ english_scores = np.random.normal(80, 12, 100)                                  
 
 data = [math_scores, science_scores, english_scores]
 
-# defined
 
+
+# defined
 def violin_info():
     sp = '~'*100
     print(f"The Math Score are -> {math_scores}\n\n{sp}\n\nThe Science Scores are -> {science_scores}\n\n{sp}\n\nThe English Scores are -> {english_scores}\n\n")
@@ -73,7 +75,6 @@ def violin_plot_3():
                    )
     customization(da_plot)
     runtheplot('Usage of showmedians, quantiles, bw_method')
-
 
 
 def violin_plot_4():
@@ -173,7 +174,6 @@ def violin_plot_6():
     # Save the figure
     # plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\Violin\Violin_Plot_06.png")
     plt.show()
-
 
 
 
