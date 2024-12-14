@@ -40,7 +40,7 @@ def plot_3():
 
     plt.figure(figsize=(10, 6))     # Figure size of the graph
     plt.plot(x, y, color = 'k', linestyle ='', label = 'Sine Wave')  # linestyle supported values are '-', '--', '-.', ':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted'
-    plt.title('Custumized LIne Plot')
+    plt.title('Customized LIne Plot')
     plt.xlabel('X-Axis')
     plt.ylabel('Y-Axis')
     plt.legend()

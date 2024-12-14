@@ -178,13 +178,13 @@ def violin_plot_6():
 
 
 # Main
-# violin_info()
-# violin_plot_1()
-# violin_plot_2()
-# violin_plot_3()
-# violin_plot_4()
-# violin_plot_5()
-# violin_plot_6()
+violin_info()
+violin_plot_1()
+violin_plot_2()
+violin_plot_3()
+violin_plot_4()
+violin_plot_5()
+violin_plot_6()
 
 
 

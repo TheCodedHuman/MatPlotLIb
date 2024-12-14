@@ -46,7 +46,7 @@ def box_plot_3():
     '''This function uses boxprops, whiskerprops, capprops, flierprops, medianprops, meanprops'''
     plt.boxplot(data,
                 patch_artist= True,                                         # This parameter is necessary for applying box properties
-                flierprops= dict(marker= '*', color= 'm', alpha= 0.5),
+                flierprops= dict(marker= '*', color= 'm', alpha= 1),
                 medianprops= dict(color= 'orange', linewidth= 2),
                 meanprops= dict(marker= 'o', markerfacecolor= 'k', markeredgecolor= 'aqua')) 
     runtheplot('Usage of Box Properties{flierprops, medianprops, meanprops}')
@@ -55,13 +55,13 @@ def box_plot_3():
 
 def box_plot_4():
     '''This function uses showmeans, showextrema, mediansshow'''
-    # plt.boxplot(data, patch_artist=True, showmeans= True, showextrema= True, Showmedians= True)
+    # plt.boxplot(data, patch_artist=True, showmeans= True, showextrema= False, Showmedians= True)
     # runtheplot('Usage of Additional Options{showmeans, showextrema, showmedians')
 
     plt.boxplot(data,  
                 patch_artist=True,
-                boxprops= dict(facecolor= 'limegreen', color= 'blue'),
-                whiskerprops= dict(color= 'darkblue', linewidth= 1.5),
+                boxprops= dict(facecolor= 'limegreen', color= 'magenta'),
+                whiskerprops= dict(color= 'black', linewidth= 1.5),
                 capprops= dict(color= 'gold', linewidth= 1.5),
                 showmeans=True)
     runtheplot('Usage of Box Properties{boxprops, whiskerprops, capprops} and showmeans')               # there isn't showmedians and showextremas now
@@ -161,13 +161,13 @@ def box_plot_6():
 
 
 # Main
-# box_info()
-# box_plot_1()
-# box_plot_2()
-# box_plot_3()
-# box_plot_4()
-# box_plot_5()
-# box_plot_6()
+box_info()
+box_plot_1()
+box_plot_2()
+box_plot_3() 
+box_plot_4()
+box_plot_5()
+box_plot_6()
 
 
 
