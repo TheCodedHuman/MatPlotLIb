@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D                 # Its necessary as it helps integrating matplotlib in 3D axis
 import numpy as np
 import pandas as pd
+import plotly.graph_objects as go                       # helps in SAVING interactive 3D plots   ;   have to do in cmd "pip install plotly"
 
 
 # literals
@@ -12,7 +13,8 @@ import pandas as pd
 time = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 speed = np.array([10, 15, 20, 25, 22, 18, 15, 17, 20, 23, 25])
 elevation = np.array([100, 150, 200, 250, 230, 210, 190, 200, 220, 250, 270])
-df = pd.DataFrame({'time': time, 'speed': speed, 'elevation': elevation})
+df = pd.DataFrame({'Time': time, 'Speed': speed, 'Elevation': elevation})
+Label= 'Cyclist Journey'
 
 
 # defined
@@ -28,7 +30,7 @@ def runtheplot(title, ax):
     ax.set_title(title)
     ax.legend(loc='upper left')
     # ax.view_init(elev=30, azim=45)                                                            # explaination of this is given below of whole code, but I think manually we can use however we want, you can uncomment this and experiment
-    ax.grid(True)
+    ax.grid(True, zorder= 2)
     plt.show()
 
 def liner_3D_info():
@@ -38,7 +40,7 @@ def liner_3D_info():
 def liner_3D_plot_1():
     '''This 3D line plot shows basic and simple line plot'''
     fig, ax = basic_structure()
-    ax.plot(time, speed, elevation, label='Cyclist Journey')
+    ax.plot(time, speed, elevation, label= Label)
     runtheplot('basic 3D line plot', ax)                                                        # here's important to use ax due to runtheplot() requirements;    similarly for all the runtheplot() below   
     
 
@@ -50,13 +52,187 @@ def liner_3D_plot_2():
             color= 'orangered',
             marker= '*',
             markersize= 10,
-            label='Cyclist Journey')
+            label= Label)
     runtheplot('Usage of linestyle, color, marker, markersize', ax)
 
 
 def liner_3D_plot_3():
     '''This 3D line plot shows usage of linewidth, markerfacecolor, xticks, yticks'''
-    pass
+    fig, ax = basic_structure()
+    ax.plot(time, speed, elevation,
+            linewidth= 3,
+            linestyle= "--",
+            markerfacecolor= 'green',
+            label= Label)
+
+    # Custom ticks
+    ax.set_xticks([0, 2, 4, 6, 8, 10]) 
+    ax.set_yticks([10, 15, 20, 25]) 
+    ax.set_zticks([100, 150, 200])
+
+
+    runtheplot('Usage of linewidth, markerfacecolor, xticks, yticks', ax)
+    
+
+def liner_3D_plot_4():
+    '''This 3D line plot shows usage of alpha, annotation, depthshade'''
+    fig, ax = basic_structure()
+    ax.plot(time, speed, elevation,
+            color= 'purple',
+            linestyle= '-',
+            marker= 'o',
+            zorder = 1,
+            label= Label,
+            alpha= 0.6)
+
+    ax.text(4, 22, 230, '(4, 22, 230)', color='purple', fontsize=10)
+
+    # ax.annotate('Peak',                               # I don't know why annotate doesn't worked here, maybe it can't be used in 3D   ;   but... later below I got to know about its working by ChatGPT and Copilot (in my opinion, no problem in using AI if one learns while copying too a.k.a. Anukaran)
+    #             xy= (4, 22),
+    #             xytext= (5, 25),
+    #             textcoords= 'offset points',
+    #             annotation_clip=False,
+    #             arrowprops= dict(facecolor= 'limegreen', shrink= 0.05))    
+    runtheplot('Usage of alpha, annotation, depthshade, zorder', ax)
+    
+    
+def liner_3D_plot_5():
+    '''This 3D line plot shows dynamic coordinates annotation by plt.text()'''
+    fig, ax = basic_structure()
+    ax.plot(time, speed, elevation,
+            color='purple',
+            linestyle='-',
+            marker='o',
+            zorder=1,
+            label=Label,
+            alpha=0.6)
+
+    # Dynamically annotate each point
+    for i in range(len(time)):
+        ax.text(time[i], speed[i], elevation[i], f'({time[i]}, {speed[i]}, {elevation[i]})', fontsize=8, color='purple')
+
+    runtheplot('Usage of alpha, dynamic annotation, zorder', ax)
+
+
+def liner_3D_plot_6():
+    '''This 3D line plot shows dynamic coordinates annotation by plt.text(), changes background color, and saves the figure'''
+    fig, ax = basic_structure()
+    fig.patch.set_facecolor('black')  # Change figure background color
+    ax.set_facecolor('whitesmoke')  # Change axes background color
+    ax.grid(color='lightblue')  # Change grid color
+
+    ax.plot(time, speed, elevation,
+            color='purple',
+            linestyle='-',
+            marker='o',
+            zorder=1,
+            label=Label,
+            alpha=0.6)
+
+    # Dynamically annotate each point
+    for i in range(len(time)):
+        ax.text(time[i], speed[i], elevation[i], f'({time[i]}, {speed[i]}, {elevation[i]})', fontsize=8, color='purple')
+
+    # Making customization in figure
+    fig.patch.set_facecolor('lightcoral')
+    
+    ax.set_facecolor('darkturquoise')
+    ax.xaxis.set_pane_color((0.9, 0.9, 0.9, 1.0))
+    ax.yaxis.set_pane_color((0.9, 0.9, 0.9, 1.0))
+    ax.zaxis.set_pane_color((0.9, 0.9, 0.9, 1.0))
+
+    ax.xaxis._axinfo['grid'].update(color= '#c2c2f0')
+    ax.yaxis._axinfo['grid'].update(color= '#99ff99')
+    ax.zaxis._axinfo['grid'].update(color= '#ffcc99')
+
+    plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\3D_Line_Plot\3D_liner", bbox_inches= 'tight', dpi= 200)
+
+    runtheplot('Usage of alpha, dynamic annotation, zorder, and background color changes', ax)
+
+
+def liner_3D_plot_7():
+    '''This 3D line plot saves the interactive figure'''
+
+    # Create Plotly figure
+    fig = go.Figure()
+
+    # Adding 3D line plot
+    fig.add_trace(go.Scatter3d(
+        x=time,
+        y=speed,
+        z=elevation,
+        mode='markers+lines',
+        marker=dict(size=5, color='purple', opacity=0.8),
+        line=dict(color='purple', width=2),
+        text=[f'({t}, {s}, {e})' for t, s, e in zip(time, speed, elevation)],
+        hoverinfo='text'
+    ))
+
+    # Setting layout
+    fig.update_layout(
+        title='Cyclist Journey: Time vs Speed vs Elevation',
+        scene=dict(
+            xaxis_title='Time (hours)',
+            yaxis_title='Speed (km/h)',
+            zaxis_title='Elevation (meters)',
+            bgcolor='lightgrey'
+        ),
+        margin=dict(l=0, r=0, b=0, t=40)
+    )
+
+    # Save the interactive plot as an HTML file
+    # fig.write_html(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\3D_Line_Plot\3D_liner_interactive.html")
+    fig.show()
+
+
+
+def liner_3D_plot_8():
+    '''This 3D line plot saves the interactive figure - ANOTHER IMPLEMENTATION'''
+
+    # Create a 3D plot
+    fig = go.Figure()
+
+    # Add a line plot with markers
+    fig.add_trace(go.Scatter3d(
+        x=time, y=speed, z=elevation,
+        mode='markers+lines',
+        marker=dict(size=5, color='purple', opacity=0.8),
+        line=dict(color='purple', width=2),
+        name=Label
+    ))
+
+    # Annotate points dynamically
+    annotations = [                                                         # Okay, so annotations is going to work like this; this works
+        dict(
+            x=time[i], y=speed[i], z=elevation[i],
+            text=f"({time[i]}, {speed[i]}, {elevation[i]})",
+            showarrow=True,
+            arrowhead=2,
+            ax=20, ay=-30,
+            font=dict(color="purple", size=10)
+        )
+        for i in range(len(time))
+    ]
+    fig.update_layout(scene_annotations=annotations)
+
+    # Set titles and background colors
+    fig.update_layout(
+        title='Interactive 3D Line Plot',
+        scene=dict(
+            xaxis_title='Time',
+            yaxis_title='Speed',
+            zaxis_title='Elevation',
+            xaxis=dict(backgroundcolor="lightcoral"),
+            yaxis=dict(backgroundcolor="darkturquoise"),
+            zaxis=dict(backgroundcolor="lightgrey")
+        )
+    )
+
+    # Save as an interactive HTML file
+    # fig.write_html(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\3D_Line_Plot\3D_liner_interactive_II.html")
+    fig.show()
+
+
 
 
 # Main
@@ -64,6 +240,12 @@ def liner_3D_plot_3():
 # liner_3D_plot_1()
 # liner_3D_plot_2()
 # liner_3D_plot_3()
+# liner_3D_plot_4()
+# liner_3D_plot_5()
+liner_3D_plot_6()
+# liner_3D_plot_7()
+# liner_3D_plot_8()
+
 
 
 
