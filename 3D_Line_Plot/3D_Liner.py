@@ -145,7 +145,7 @@ def liner_3D_plot_6():
     ax.yaxis._axinfo['grid'].update(color= '#99ff99')
     ax.zaxis._axinfo['grid'].update(color= '#ffcc99')
 
-    plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\3D_Line_Plot\3D_liner", bbox_inches= 'tight', dpi= 200)
+    # plt.savefig(r"D:\Bhaiyu Ki Files Aur Samaan\NewEraOfPython\MatPlotLIb\Graph_Images\3D_Line_Plot\3D_liner", bbox_inches= 'tight', dpi= 200)
 
     runtheplot('Usage of alpha, dynamic annotation, zorder, and background color changes', ax)
 
@@ -242,7 +242,7 @@ def liner_3D_plot_8():
 # liner_3D_plot_3()
 # liner_3D_plot_4()
 # liner_3D_plot_5()
-liner_3D_plot_6()
+# liner_3D_plot_6()
 # liner_3D_plot_7()
 # liner_3D_plot_8()
 
