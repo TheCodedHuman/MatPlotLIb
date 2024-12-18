@@ -1,11 +1,11 @@
 # #Here we are fabricating functions to represent the working of 3D plots in matplotlib, but we may have to utilize subplots and other libraries too for effectiveness (tbh, this is wayy new concept for me to learn so I could've made mistakes too :p )
 
 # imports
+# from mpl_toolkits.mplot3d import Axes3D                   # this module can also be used, but, here plotly is already helping us in 3D
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D                 # Its necessary as it helps integrating matplotlib in 3D axis
 import numpy as np
 import pandas as pd
-import plotly.graph_objects as go                       # helps in SAVING interactive 3D plots   ;   have to do in cmd "pip install plotly"
+import plotly.graph_objects as go                           # helps in SAVING interactive 3D plots   ;   have to do in cmd "pip install plotly"
 
 
 # literals
@@ -17,7 +17,7 @@ df = pd.DataFrame({'Time': time, 'Speed': speed, 'Elevation': elevation})
 Label= 'Cyclist Journey'
 
 
-# defined
+# defined-
 def basic_structure():
     fig = plt.figure()
     ax = fig.add_subplot(111, projection= '3d')
@@ -245,7 +245,7 @@ def liner_3D_plot_8():
 # liner_3D_plot_6()
 # liner_3D_plot_7()
 # liner_3D_plot_8()
-
+   
 
 
 
