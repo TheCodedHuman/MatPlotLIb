@@ -189,7 +189,7 @@ def scato_7_3d():
     plt.tight_layout(rect=[0, 0, 1, 0.96])  # Adjust layout to fit the suptitle
     plt.show()
 
-p
+
 
 def scato_8_3d():
     '''This 3D scatter plot shows the presence of multiple scatter plots within single figure'''
